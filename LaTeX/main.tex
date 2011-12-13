@@ -1,0 +1,29 @@
+
+
+% showboxes als Option zeigt die Ränder für textblock
+\documentclass[a4paper,ngerman,landscape]{article}
+
+
+\input{01packages}
+\input{02components}
+\input{03pages}
+\input{04styles}
+\input{05layout}
+
+\input{../config}
+
+
+\begin{document}
+
+	\ifthenelse{%
+		\equal{\version}{web}}{%
+		
+			\layoutweb
+			
+		}{
+		
+			\layoutdruck
+			
+		}
+
+\end{document}

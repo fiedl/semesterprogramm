@@ -1,0 +1,102 @@
+
+%%%
+%% Allgemeine Elemente
+%%%
+
+% Überschrift
+\def\Ueberschrift#1{\Section{#1}}
+
+% Aufzählungen
+\def\Aufzaehlung{\itemize}
+\def\EndeDerAufzaehlung{\enditemize}
+\def\Punkt{\item}
+
+% Abstand
+\def\Abstand{\medskip}
+
+% Fett-Druck
+\def\Fett#1{\textbf{#1}}
+
+
+%%%
+%% Chargierten-Seite
+%%%
+
+\def\Charge#1#2{%
+	\noindent\begin{tabelle}{@{}p{0.45\columnwidth}L}{0}%
+		#1 & #2%
+	\end{tabelle}\par}
+
+	
+%%%
+%% Kalender-Seite
+%%%
+
+% Zwischenüberschriften
+\newcommand\Monat[1]{\Section{#1}}
+\newcommand\Feierlichkeiten[1]{\Subsection{#1}}
+
+% Kalender-Eintrag
+\newcommand\Eintrag[1]{%
+\vspace*{-0.3em}
+\noindent\begin{tabelle}{@{}p{0.4em}p{0.3em}p{2.8em}LP{1.9em}}{1.3}%
+#1%
+\end{tabelle}
+}
+
+% Abkürzungen
+\def\hst{\,h~s.t.\xspace}
+\def\hct{\,h~c.t.\xspace}
+\def\o{o.\xspace}
+\def\ho{h.o.\xspace}
+\def\io{i.o.\xspace}
+\def\adH{adH.\xspace}
+\def\dh{d.\,h.\,}
+
+
+%%%
+%% Ankündigungs-Seite
+%%%
+
+\def\legende{%
+\legendenstyle%
+\begin{tabelle}{lL}{1.3}
+	\adH & auf dem Haus, \adresse \\
+	\io & inoffizielles Institut \\
+	\o & offizielles Institut \\
+	\ho & hochoffizielles Institut, Kleiderordnung: dunkler Anzug, helles Hemd und dunkle Kravatte \\
+	c.t. & cum tempore, \dh Beginn 15\,min. später \\
+	s.t. & sine tempore, \dh Beginn pünktlich zur vollen Stunde \\
+\end{tabelle}
+}
+
+
+%%%
+%% Deckseite
+%%%
+
+\def\sommerwintersemester{%
+\ifthenelse{\equal{\sommerwinter}{sommer}}{Sommersemester}{Wintersemester}}
+
+\def\semestereinzeilig{\sommerwintersemester~\semesterjahr/\semesterzweitesjahr\xspace}
+
+\def\zirkel{\raisebox{-0.8em}{\includegraphics[height=2em]{../Zirkel/Z_\verbindung}}\xspace}
+
+
+%%%
+%% Kontakt-Seite
+%%%
+
+\newcommand\daten[2]{%
+\bigskip%
+\textbf{#1}\par%
+\vspace{0.1em}%
+\begin{tabular}{ll}%
+#2%
+\end{tabular}%
+\vspace{0.5em}%
+}
+
+
+
+

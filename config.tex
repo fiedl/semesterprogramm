@@ -1,0 +1,206 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%    S E M E S T E R P R O G R A M M 
+%% 
+%%    LaTeX-Vorlage:   Sebastian Fiedlschuster  E 06  (B-XX)
+%%    <fiedlschuster@wingolf.org>
+%%    Dez 2011
+%%
+%%    Zur Erstellung eines Semesterprogrammes diese Datei anpassen
+%%    und   pdflatex ./LaTeX/main.tex   ausführen.
+%%
+%%    Genauere Anpassung des Layouts durch Anpassen der Dateien im 
+%%    ./LaTeX-Ordner möglich.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% 
+%% Erstelle Web-Version oder Druck-Version
+%%%
+\def\version{druck} % "druck" oder "web"
+
+
+%%% 
+%% Eigenschaften der Verbindung
+%%%
+
+% Verbindung
+\def\verbindung{Erlangen} % z.B. Erlangen
+
+% Farben
+\definecolor{erstefarbe}{rgb}{0 0 0} % schwarz
+\definecolor{zweitefarbe}{rgb}{1 1 1} % weiß
+\definecolor{drittefarbe}{rgb}{0.92 0.66 0.24} % gold
+
+% Welche Farbe sollen die Zwischenüberschriften haben?
+\definecolor{ueberschriftenfarbe}{rgb}{0.66 0.60 0.24} % altgold
+
+
+%%% 
+%% Semester
+%%%
+
+\def\sommerwinter{winter} % "sommer" oder "winter"
+\def\semesterjahr{2011} % 2011
+\def\semesterzweitesjahr{12} % 12
+
+
+%%% 
+%% Deckseite
+%%%
+
+% Großer Verbindungsname auf dem Deckblatt
+%   \zirkel  fügt den Zirkel der Verbindung ein.
+%   z.B.   "Erlanger \zirkel Wingolf"
+\def\verbindungdeckblatt{Erlanger \zirkel Wingolf}
+
+% Band anzeigen?  (z.B. nicht, wenn es schon vorgedruckt ist.)
+\def\bandanzeigen{ja} % "ja" oder "nein"
+
+
+%%% 
+%% Rückseite
+%%%
+
+% Wingolfslogo oder Leerseite?
+\def\rueckseitelogo{logo}  % "logo" oder "leer"
+
+
+%%% 
+%% Selbstbeschreibung
+%%%
+
+\def\selbstbeschreibung{%%
+\Ueberschrift{Wer wir sind}
+Der Erlanger Wingolf ist eine Studentenverbindung, die sich unabhängig von Nationalität und Konfession zum christlichen Glauben bekennt. Daher lehnen wir Duell und Mensur seit jeher kategorisch ab.
+
+Auf der Basis von Weltoffenheit, Freundschaft und Verantwortung gegenüber Verbindung und Gesellschaft unterstützen wir uns gegenseitig, und das nicht nur über die Dauer des Studiums, sondern – über Generationen und Fakultäten hinweg – ein Leben lang. Als Zeichen dieser brüderlichen Verbundenheit tragen wir unser schwarz-weiß-goldenes Band.
+
+Unsere Verbindung ist Mitbegründer des Wingolfsbundes, zu dem 35 Verbindungen in Deutschland, Österreich und Estland gehören, und besteht in ihren Grundzügen seit 1850.
+
+Wir treffen uns in der Friedrichstraße 26, sowohl, um unser Studium in gegenseitiger Unterstützung erfolgreich zu bewältigen, als auch zu geselligen Veranstaltungen und Vorträgen aller Art.
+
+Wir sind offen für engagierte Studenten der FAU, die mehr wollen als nur ein Fachstudium.
+
+Wir sind der Überzeugung, dass dieser Freundeskreis ein hervorragender Ausgleich zum Studienalltag ist und freuen uns auf Deinen Besuch!
+}%%
+
+
+%%%
+%% Kontakt-Seite
+%%%
+
+% Verbindungsname auf der Kontaktseite
+\def\verbindungkontaktseite{Christliche Studentenverbindung\\ Erlanger Wingolf}
+
+% Kontaktdaten
+\def\kontaktdaten{
+Friedrichstraße 24\,-\,26\\
+91054 Erlangen
+
+\daten{Kontakt}{
+	Tel.	& 09131\,/\,213\,14 \\
+	E-Mail & info@erlanger-wingolf.de \\
+	Netz & www.erlanger-wingolf.de
+}
+
+\daten{Bankverbindung}{
+	Kto. & 21089 \\
+	BLZ & 763\,500\,00\\
+	& Kreissparkasse Erlangen
+}
+}
+
+
+%%%
+%% Chargierte
+%%%
+
+\def\chargentext{
+\Ueberschrift{Die Chargierten}
+\Charge{Senior (x)}{Heiko Seeburg}
+\Charge{Fuxmaiores (xx)}{Theodor Meedt    Fabian Kollhof}
+\Charge{Kneipwart (xxx)}{Martin Seeburg}
+\Abstand
+
+laden mit diesem Programm herzlich zu den Veranstaltungen im \semestereinzeilig ein.
+
+Gäste sind zu allen Instituten stets willkommen. Es ist zu beachten, dass Convente interne Veranstaltungen sind.
+
+Für weitere inoffizielle Veranstaltungen bitte den Terminkalender im Netz überprüfen:
+
+www.erlanger-wingolf.de}
+
+
+%%%
+%% Kalender
+%%%
+
+\def\kalenderteil{
+
+\Monat{Oktober 2011}
+	\Eintrag{16. & So & 20\hst & Semesterbegrüßungs\-abend & \o}
+	\Eintrag{18. & Di & 18\hst & feierliches Fahnehissen & \ho}
+	\Eintrag{& & 20\hst & Anfangsgottesdienst St.-Bonifaz-Kirche & \ho}
+	\Eintrag{19 & Mi & 20\hst & Anconvente & \ho}
+
+\Monat{November 2011}
+	\Eintrag{3. & Do & 20\hst & Cocktailparty & \io}
+	\Eintrag{9. & Mi & 19\hct & Vortrag G.\,Rambach: „Schicksalsjahre in der Oberpfalz: 1933--59“ & \o}
+	\Eintrag{11. & Fr & 20\hct & Damenessen & \io}
+	\Eintrag{16. & Mi & 20\hct & Convente & \o}
+	
+	\Feierlichkeiten{Feierlichkeiten zum 162.\,Stiftungstag}
+	\Eintrag{25. & Fr & 20\hct & Begrüßungsabend & \o}
+	\Eintrag{26. & Sa & 18\hst & Ernste Feier & \ho}
+	\Eintrag{ & & 20\hct & Festcommers & \ho}
+	\Eintrag{27. & So & 10\hst & Kirchgang, mit anschl. Frühschoppen & \ho}
+
+\Monat{Dezember 2011}
+	\Eintrag{6. & Di & 20\hct & Nikolauskneipe & \o}
+	\Eintrag{7. & Mi & 20\hct & Convente & \o}
+	\Eintrag{14. & Mi & 20\hct & Krambambuli & \o}
+%	
+	%\Feierlichkeiten{Thomastag 2011}
+	\Eintrag{17. & Sa &15\hct & AK Zukunft & \io}
+	\Eintrag{& & 20\hct & Thoamskneipe & \ho}
+	\Eintrag{18. & So & 10\hst & Kirchgang & \ho}
+	\Eintrag{& & 12\hst & Mittagessen}
+	\Eintrag{& & 13\hct & Thomasbummel}
+	\Eintrag{& & 15\hct & Kaffeetrinken adH.}
+	\Eintrag{21. & Mi & 19\hct & Weihnachtsfeier & \io}
+
+\Monat{Jaunar 2012}
+	\Eintrag{11. & Mi & 20\hct & AHC und Convente & \ho}
+	\Eintrag{13. & Fr & 20\hct & Gentlemen's Club & \io}
+	\Eintrag{18. & Mi & 20\hct & Bibelstunde & \o}
+	\Eintrag{20. & bis & 22. & Fuxenfahrt & \ho}
+	\Eintrag{25. & Mi & 20\hct & Chargenwahlconvent & \ho}
+
+\Monat{Februar 2012}
+	\Eintrag{7. & Di & 19\hst & Abschlussgottesdienst & \ho}
+	\Eintrag{8. & Mi & 20\hct & Abconvente & \ho}
+	\Eintrag{11. & Sa & 18\hst & Ernste Feier & \o}
+	\Eintrag{&& 20\hct & Abkneipe mit anschl. Fahneeinholen & \ho}
+}
+
+
+%%%
+%% Weitere Ankündigungen und Legende
+%%%
+
+\def\ankuendigungen{
+	\Punkt Jeden Sonntag treffen wir uns fakultativ um 9\hct adH. zum gemeinsamen \Fett{Frühstück mit anschließendem Kirchgang}. Es wird abgewechselt zwischen katholischen und evangelischen Gottesdiensten. Gäste sind jederzeit herzlich willkommen.
+	\Punkt \Fett{Fuxenstunden} finden wöchentlich nach Absprache mit dem XX statt.
+	\Punkt Jeden Mittwoch treffen wir uns um 19\hst zum \Fett{Aktivenabend} \adH
+	Aktive, die sich nicht daran beteiligen können, haben bei den Chargierten Dispens einzuholen.
+}
+
+% Adresse für die Erklärung von "adH." in der Legende
+\def\adresse{Friedrichstraße 24-26, Erlangen}
+
+
+

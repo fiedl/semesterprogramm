@@ -1,0 +1,124 @@
+
+%%%
+%% Deckseite
+%%%
+
+\def\deckseite{
+\begin{center}
+
+	\vspace*{0.6cm}
+	\includegraphics[height=5cm]{../Wappen/W_\verbindung}
+	
+	\ifthenelse{\equal{\bandanzeigen}{ja}}{
+
+		%\begin{textblock}{20}(80,0)%
+		\vspace*{-5.75cm}
+		\hfill
+		\begin{pspicture}(0,0)(3,3)%
+		
+			\psset{xunit=1cm, yunit=1cm}
+			\psset{fillstyle=solid, linestyle=none}
+		
+			\newlength\farbbreite
+			\setlength{\farbbreite}{0.3cm}
+		
+			\pspolygon[fillcolor=drittefarbe](3,0)(0,3)(3,3)
+			\pspolygon[fillcolor=zweitefarbe](3,\farbbreite)(\farbbreite,3)(3,3)
+			\pspolygon[fillcolor=erstefarbe](3,2\farbbreite)(2\farbbreite,3)(3,3)
+			\pspolygon[fillcolor=white](3,3\farbbreite)(3\farbbreite,3)(3\farbbreite,3.5)(3.5,3.5)(3.5,3\farbbreite)
+		
+		\end{pspicture}
+		%\end{textblock}
+		\hspace*{-0.35cm}	
+		\vspace*{2.6cm}
+	}{}
+	
+	{\rmfamily
+
+	
+	\vspace*{0.4cm}\large
+	\textbf{\verbindungdeckblatt}
+
+	\vspace*{0.6cm}
+	Programm des\\
+	\sommerwintersemester s\\
+	\semesterjahr/\semesterzweitesjahr
+	}
+
+\end{center}
+
+}
+
+
+%%%
+%% Chargen-Seite
+%%%
+\def\chargenseite{
+	\chargentextstyle
+	\chargentext
+	\vfill
+}
+
+
+%%%
+%% Kontakt-Seite
+%%%
+
+\def\kontaktseite{
+	\Section{\verbindungkontaktseite}
+	\textstyle\medskip
+	\kontaktdaten\par
+	\vfill
+	\begin{center}
+		\includegraphics[width=4cm]{img/signet_wingolf}
+	\end{center}
+}
+
+%%%
+%% Kalender-Seite
+%%%
+\def\kalenderseiten{
+	\kalendertextstyle
+	\kalenderabstand
+	\kalenderteil
+}
+
+
+%%%
+%% Selbstbeschreibungs-Seite
+%%%
+
+\def\selbstbeschreibungsseite{
+	\selbstbeschreibungstextstyle%
+	\selbstbeschreibung
+}
+
+%%%
+%% Ankündigungs-Seite
+%%%
+
+\def\ankuendigungsseite{
+	\Section{Weitere Ankündigungen}
+	\textstyle
+	\begin{itemize}\textstyle
+		\ankuendigungen
+	\end{itemize}
+
+	\vfill\legende
+}
+
+%%%
+%% Rückseite
+%%%
+
+\def\rueckseite{
+	\ifthenelse{%
+		\equal{\rueckseitelogo}{logo}}{%
+			\parbox[b][\boxhoehe][c]{\columnwidth}{
+			\begin{centering}
+				\includegraphics[width=5cm,angle=90]{img/signet_wingolf}\par
+			\end{centering}}%
+		}{%
+			\vspace*{0.4\paperheight} % Leerseite
+		}}
+

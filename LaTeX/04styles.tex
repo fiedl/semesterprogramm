@@ -1,0 +1,83 @@
+
+%%%
+%% Farben
+%%%
+
+%\def\goldrgb{0.92 0.66 0.24}  % gold
+%\def\goldrgb{0.66 0.60 0.24}  % altgold
+
+
+%%%
+%% Text-Stile
+%%%
+
+\def\textstyle{\rmfamily\small\absatzabstand\normalcolor}
+
+\def\chargentextstyle{\textstyle\chargenabstand}
+\def\kalendertextstyle{\textstyle\footnotesize}
+\def\legendenstyle{\textstyle\tiny\color{Gray}}
+
+\def\selbstbeschreibungstextstyle{\textstyle\rmfamily\scriptsize}
+
+
+%%%
+%% Abstände
+%%%
+
+\def\absatzabstand{\setlength{\parskip}{0.5em}\renewcommand{\baselinestretch}{1}}
+\def\ueberschriftabstand{\setlength{\parskip}{0.5em}\renewcommand{\baselinestretch}{1}}
+
+\def\chargenabstand{\absatzabstand\setlength{\parskip}{1em}}
+
+\newcommand\kalenderabstand{\renewcommand{\baselinestretch}{0.8}\setlength{\parskip}{0.2em}}
+
+
+
+%%%
+%% Überschriften
+%%%
+
+\def\sectionstyle{\rmfamily\normalsize\ueberschriftabstand}
+\def\subsectionstyle{\rmfamily\normalsize\color{ueberschriftenfarbe}\centering}
+
+% Section
+\makeatletter
+\newcommand\Section[1]{{%
+\sectionstyle #1\\
+\raisebox{0.6em}{%
+	\textcolor{ueberschriftenfarbe}{%
+		\rule{\columnwidth}{0.4pt}}%
+}%
+\vspace*{-0.5em}%
+\nobreak\par
+}}
+\makeatother
+
+% Subsection
+\newcommand\Subsection[1]{{%
+\subsectionstyle #1\par
+}}
+
+%%%
+%% Tabellen
+%%%
+
+\newcommand{\oldarraystretch}{}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+%\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+%\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{P}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+
+%\renewcommand\tabularxcolumn[1]{m{#1}}
+
+\newenvironment{tabelle}[2]%
+{%
+\renewcommand{\oldarraystretch}{\arraystretch}
+  \renewcommand{\arraystretch}{#2} % Tabellenabstände vergrößern
+  \noindent\tabularx{\columnwidth}{#1}
+}{%
+  \endtabularx
+  \renewcommand{\arraystretch}{\oldarraystretch}
+}

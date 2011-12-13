@@ -1,0 +1,113 @@
+
+%%%
+%% Seiten-Layout
+%%%
+
+% Keine Seitenzahlen
+\pagestyle{empty}
+
+
+%%%
+%% Spalten-Aufteilung
+%%%
+
+% Spalten-Abstand
+\setlength{\columnsep}{1cm}
+
+% Spaltenfeld
+\def\boxhoehe{0.46\paperheight}
+\newcommand\normalespalte[1]{%
+%\fbox{%
+\begin{minipage}{\columnwidth}
+\vbox to \boxhoehe{#1}
+\end{minipage}%
+%}%
+}
+
+% Spaltenfeld, auf dem Kopf
+\newcommand\gedrehtespalte[1]{%
+\rotatebox{180}{%
+\normalespalte{#1}%
+}}
+
+% Vierspaltige Umgebung
+% Der Parameter sollte 1 (oben anfangen) oder 51 (bei Seitenhälfte anfangen) sein.
+\newenvironment{vierspaltig}[1]{%
+\begin{textblock}{98}(0,#1)%
+\begin{minipage}[t][0.46\paperheight][t]{0.96\paperwidth}%
+\begin{multicols*}{4}%
+}{%
+\end{multicols*}%
+\end{minipage}%
+\end{textblock}%
+}
+
+
+%%%
+%% Absolute Positionierung
+%%%
+
+% Textblock-Positionierung
+\setlength{\TPHorizModule}{\paperwidth/100}
+\setlength{\TPVertModule}{\paperheight/100}
+\textblockorigin{0mm}{0mm}
+
+
+%%%
+%% Layout für Druckversion
+%%%
+\def\layoutdruck{
+	\begin{vierspaltig}{1}
+		\normalespalte{
+			\chargenseite }
+	
+		\columnbreak
+		\kalenderseiten
+	
+		\normalespalte{
+			\ankuendigungsseite }
+	\end{vierspaltig}
+	\begin{vierspaltig}{51}
+		\gedrehtespalte{
+			\deckseite }
+
+		\gedrehtespalte{
+			\rueckseite }
+		
+		\gedrehtespalte{
+			\selbstbeschreibungsseite }
+		
+		\gedrehtespalte{ 
+			\kontaktseite }
+	\end{vierspaltig}
+}
+
+
+%%%
+%% Layout für Web-Version
+%%%
+\def\layoutweb{
+	\begin{vierspaltig}{1}
+		\normalespalte{
+			\deckseite }
+
+		\columnbreak
+		\kalenderseiten
+	
+		\normalespalte{ 
+			\kontaktseite }
+	\end{vierspaltig}
+	\begin{vierspaltig}{51}
+		\normalespalte{
+			\rueckseite }
+
+		\normalespalte{
+			\chargenseite }
+		
+		\normalespalte{
+			\selbstbeschreibungsseite }
+
+		\normalespalte{
+			\ankuendigungsseite }
+	\end{vierspaltig}
+}
