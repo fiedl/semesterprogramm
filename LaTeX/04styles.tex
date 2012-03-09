@@ -11,13 +11,23 @@
 %% Text-Stile
 %%%
 
-\def\textstyle{\rmfamily\small\absatzabstand\normalcolor}
+% Achtung Konsistenz: Im Style keine Abstände definieren. Die kommen weiter unten.
 
-\def\chargentextstyle{\textstyle\chargenabstand}
+\def\textstyle{\rmfamily\small\normalcolor}
+
+\def\chargentextstyle{\textstyle}
 \def\kalendertextstyle{\textstyle\footnotesize}
 \def\legendenstyle{\textstyle\tiny\color{Gray}}
 
 \def\selbstbeschreibungstextstyle{\textstyle\rmfamily\scriptsize}
+
+
+%%%
+%% Überschriften-Stile
+%%%
+
+\def\sectionstyle{\rmfamily\normalsize}
+\def\subsectionstyle{\rmfamily\normalsize\color{ueberschriftenfarbe}\centering}
 
 
 %%%
@@ -28,21 +38,14 @@
 \def\ueberschriftabstand{\setlength{\parskip}{0.5em}\renewcommand{\baselinestretch}{1}}
 
 \def\chargenabstand{\absatzabstand\setlength{\parskip}{1em}}
-
-\newcommand\kalenderabstand{\renewcommand{\baselinestretch}{0.8}\setlength{\parskip}{0.2em}}
-
+\def\kalenderabstand{\renewcommand{\baselinestretch}{0.8}\setlength{\parskip}{0.2em}}
 
 
-%%%
-%% Überschriften
-%%%
-
-\def\sectionstyle{\rmfamily\normalsize\ueberschriftabstand}
-\def\subsectionstyle{\rmfamily\normalsize\color{ueberschriftenfarbe}\centering}
 
 % Section
 \makeatletter
 \newcommand\Section[1]{{%
+\ueberschriftabstand%
 \sectionstyle #1\\
 \raisebox{0.6em}{%
 	\textcolor{ueberschriftenfarbe}{%

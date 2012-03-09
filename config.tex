@@ -20,7 +20,7 @@
 %%% 
 %% Erstelle Web-Version oder Druck-Version
 %%%
-\def\version{druck} % "druck" oder "web"
+\def\version{web} % "druck" oder "web"
 
 
 %%% 
@@ -43,9 +43,9 @@
 %% Semester
 %%%
 
-\def\sommerwinter{winter} % "sommer" oder "winter"
-\def\semesterjahr{2011} % 2011
-\def\semesterzweitesjahr{12} % 12
+\def\sommerwinter{sommer} % "sommer" oder "winter"
+\def\semesterjahr{2012} % 2011
+\def\semesterzweitesjahr{} % 12
 
 
 %%% 
@@ -65,8 +65,8 @@
 %% Rückseite
 %%%
 
-% Wingolfslogo oder Leerseite?
-\def\rueckseitelogo{logo}  % "logo" oder "leer"
+% Wingolfslogo, Leerseite oder Ergänzungsseite?
+\def\rueckseitelogo{ergaenzung}  % "logo" oder "leer" oder "ergaenzung"
 
 
 %%% 
@@ -74,6 +74,7 @@
 %%%
 
 \def\selbstbeschreibung{%%
+\vspace{}
 \Ueberschrift{Wer wir sind}
 Der Erlanger Wingolf ist eine Studentenverbindung, die sich unabhängig von Nationalität und Konfession zum christlichen Glauben bekennt. Daher lehnen wir Duell und Mensur seit jeher kategorisch ab.
 
@@ -139,6 +140,8 @@ www.erlanger-wingolf.de}
 %% Kalender
 %%%
 
+%  "\newline" erzeugt einen Umbruch
+
 \def\kalenderteil{
 
 \Monat{Oktober 2011}
@@ -149,7 +152,7 @@ www.erlanger-wingolf.de}
 
 \Monat{November 2011}
 	\Eintrag{3. & Do & 20\hst & Cocktailparty & \io}
-	\Eintrag{9. & Mi & 19\hct & Vortrag G.\,Rambach: „Schicksalsjahre in der Oberpfalz: 1933--59“ & \o}
+	\Eintrag{9. & Mi & 19\hct & Vortrag  G.\,Rambach: „Schicksalsjahre in der Oberpfalz: 1933--59“ & \o}
 	\Eintrag{11. & Fr & 20\hct & Damenessen & \io}
 	\Eintrag{16. & Mi & 20\hct & Convente & \o}
 	
@@ -185,6 +188,19 @@ www.erlanger-wingolf.de}
 	\Eintrag{8. & Mi & 20\hct & Abconvente & \ho}
 	\Eintrag{11. & Sa & 18\hst & Ernste Feier & \o}
 	\Eintrag{&& 20\hct & Abkneipe mit anschl. Fahneeinholen & \ho}
+}
+
+%%%
+%% Ergänzungsseite (statt Wingolfsllog auf Rückseite)
+%%%
+
+\def\ergaenzungsteil{
+\Ueberschrift{Ausblick: WS\,2012/13}
+	\Eintrag{16. & So & 20\hst & Semesterbegrüßungs\-abend & \o}
+	\Eintrag{18. & Di & 18\hst & feierliches Fahnehissen & \ho}
+	\Eintrag{& & 20\hst & Anfangsgottesdienst St.-Bonifaz-Kirche & \ho}
+	\Eintrag{19 & Mi & 20\hst & Anconvente & \ho}
+
 }
 
 

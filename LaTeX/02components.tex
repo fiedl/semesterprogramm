@@ -78,7 +78,8 @@
 \def\sommerwintersemester{%
 \ifthenelse{\equal{\sommerwinter}{sommer}}{Sommersemester}{Wintersemester}}
 
-\def\semestereinzeilig{\sommerwintersemester~\semesterjahr/\semesterzweitesjahr\xspace}
+\def\semester{\semesterjahr\ifthenelse{\equal{\semesterzweitesjahr}{}}{}{/\semesterzweitesjahr}}
+\def\semestereinzeilig{\sommerwintersemester~\semester\xspace}  
 
 \def\zirkel{\raisebox{-0.8em}{\includegraphics[height=2em]{../Zirkel/Z_\verbindung}}\xspace}
 

@@ -42,7 +42,7 @@
 	\vspace*{0.6cm}
 	Programm des\\
 	\sommerwintersemester s\\
-	\semesterjahr/\semesterzweitesjahr
+	\semester
 	}
 
 \end{center}
@@ -53,8 +53,10 @@
 %%%
 %% Chargen-Seite
 %%%
-\def\chargenseite{
-	\chargentextstyle
+\def\chargenseite{%
+	\chargentextstyle%
+	\chargenabstand%
+	\vspace{-1.5pt}%
 	\chargentext
 	\vfill
 }
@@ -64,11 +66,12 @@
 %% Kontakt-Seite
 %%%
 
-\def\kontaktseite{
-	\Section{\verbindungkontaktseite}
-	\textstyle\medskip
-	\kontaktdaten\par
-	\vfill
+\def\kontaktseite{%
+	\Section{\verbindungkontaktseite}%
+	\absatzabstand%
+	\textstyle\medskip%
+	\kontaktdaten\par%
+	\vfill%
 	\begin{center}
 		\includegraphics[width=4cm]{img/signet_wingolf}
 	\end{center}
@@ -77,9 +80,10 @@
 %%%
 %% Kalender-Seite
 %%%
-\def\kalenderseiten{
-	\kalendertextstyle
-	\kalenderabstand
+\def\kalenderseiten{%
+	\absatzabstand%
+	\kalendertextstyle%
+	\kalenderabstand%
 	\kalenderteil
 }
 
@@ -88,8 +92,9 @@
 %% Selbstbeschreibungs-Seite
 %%%
 
-\def\selbstbeschreibungsseite{
+\def\selbstbeschreibungsseite{%
 	\selbstbeschreibungstextstyle%
+	\absatzabstand%
 	\selbstbeschreibung
 }
 
@@ -97,10 +102,12 @@
 %% Ankündigungs-Seite
 %%%
 
-\def\ankuendigungsseite{
-	\Section{Weitere Ankündigungen}
-	\textstyle
-	\begin{itemize}\textstyle
+\def\ankuendigungsseite{%
+	\vspace{-1.0pt}%
+	\Section{Weitere Ankündigungen}%
+	\textstyle%
+	\absatzabstand%
+	\begin{itemize}\textstyle%
 		\ankuendigungen
 	\end{itemize}
 
@@ -119,6 +126,11 @@
 				\includegraphics[width=5cm,angle=90]{img/signet_wingolf}\par
 			\end{centering}}%
 		}{%
-			\vspace*{0.4\paperheight} % Leerseite
+			\ifthenelse{%
+				\equal{\rueckseitelogo}{ergaenzung}}{%
+					\ergaenzungsteil
+				}{
+					\vspace*{0.4\paperheight} % Leerseite
+				}
 		}}
 
