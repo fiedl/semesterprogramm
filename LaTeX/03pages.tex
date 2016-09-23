@@ -8,34 +8,34 @@
 
 	\vspace*{0.6cm}
 	\includegraphics[height=5cm]{../Wappen/W_\verbindung}
-	
+
 	\ifthenelse{\equal{\bandanzeigen}{ja}}{
 
 		%\begin{textblock}{20}(80,0)%
 		\vspace*{-5.75cm}
 		\hfill
 		\begin{pspicture}(0,0)(3,3)%
-		
+
 			\psset{xunit=1cm, yunit=1cm}
 			\psset{fillstyle=solid, linestyle=none}
-		
+
 			\newlength\farbbreite
 			\setlength{\farbbreite}{0.3cm}
-		
+
 			\pspolygon[fillcolor=drittefarbe](3,0)(0,3)(3,3)
 			\pspolygon[fillcolor=zweitefarbe](3,\farbbreite)(\farbbreite,3)(3,3)
 			\pspolygon[fillcolor=erstefarbe](3,2\farbbreite)(2\farbbreite,3)(3,3)
 			\pspolygon[fillcolor=white](3,3\farbbreite)(3\farbbreite,3)(3\farbbreite,3.5)(3.5,3.5)(3.5,3\farbbreite)
-		
+
 		\end{pspicture}
 		%\end{textblock}
-		\hspace*{-0.35cm}	
+		\hspace*{-0.35cm}
 		\vspace*{2.6cm}
 	}{}
-	
+
 	{\rmfamily
 
-	
+
 	\vspace*{0.4cm}\large
 	\textbf{\verbindungdeckblatt}
 
