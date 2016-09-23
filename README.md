@@ -2,7 +2,7 @@
 
 LaTeX-Vorlage für das Semesterprogramm des Erlanger Wingolfs.
 
-<img src="Screenshots/Bildschirmfoto 2016-09-24 um 00.09.33.png" width="1040" height="742" alt="Bildschirmfoto 2016 09 24 Um 00.09.33">
+<img src="Screenshots/Bildschirmfoto 2016-09-24 um 00.09.33.png" alt="Bildschirmfoto 2016 09 24 Um 00.09.33">
 
 ## Benutzung
 
