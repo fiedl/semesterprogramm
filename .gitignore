@@ -1,0 +1,6 @@
+*.lb
+*.log
+main-autopp.dvi
+main-autopp.ps
+*.aux
+main.synctex.gz
